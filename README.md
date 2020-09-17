@@ -51,13 +51,13 @@
 
 4) Тест серверных запросов через **telnet** и **curl**.
     + HEAD
-        [HEAD](https://github.com/DenGoose/web_laba2020/blob/dev/asstrs/images/github/head.png)
+        [HEAD](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/head.png)
     + GET
-        [GET](https://github.com/DenGoose/web_laba2020/blob/dev/asstrs/images/github/get.png)
+        [GET](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/get.png)
     + 404
-        [error404](https://github.com/DenGoose/web_laba2020/blob/dev/asstrs/images/github/error404.png)
+        [error404](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/error404.png)
     + POST
-        [POST](https://github.com/DenGoose/web_laba2020/blob/dev/asstrs/images/github/post.png)
+        [POST](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/post.png)
 
 
 ## <a name="Second">Лабораторная работа 2 "Stateless HTTP-протокол и его реальное применение."</a>
