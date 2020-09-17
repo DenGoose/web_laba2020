@@ -3,6 +3,7 @@
 ## **Гусельников Денис и Громко Дарья ПМИБ-191**
 
 Содержание:
+
 1) [Основы веб-разработки HTML и HTTP](#First)
 2) [Stateless HTTP-протокол и его реальное применение.](#Second)
 3) [Решение прикладных задач на PHP.](#Third)
@@ -27,36 +28,37 @@
 
 ***Нужно провести следующую работу :***
 
-    1. Описать текстом минимум 3 use case (сценария использования) сайта.
-    2. Нарисовать“сетки дизайна” для минимум 3 страниц будущего сайта.
-    3. Собрать эти 3 страницы на bootstrap.
-    4. Установить и запустить в XAMPP (В нашем случае плагин для VSCode Live Server).
-    5. С помощью telnet открыть свой свежесделанный сайт из трех страниц с использованием протокола http.
-    6. С помощью ручного ввода команд получить
-        a. Заголовки каждой страницы через HEAD, проверить статус ответа
-        b. Содержимое каждой страницы через GET, проверить статус ответа
-        c. Заголовок и содержимое несуществующей страницы, например any_page.html
-        d. Попробовать отправить POST-запрос на главную страницу
+1) Описать текстом минимум **3 use case** (сценария использования) сайта.
+2) Нарисовать“сетки дизайна” для минимум **3-х страниц** будущего сайта.
+3) Собрать эти 3 страницы на **bootstrap**.
+4) Установить и запустить в **XAMPP** (В нашем случае плагин для VSCode Live Server).
+5) С помощью **telnet** открыть свой свежесделанный сайт из трех страниц с использованием протокола **http**.
+6) С помощью ручного ввода команд получить
+    + Заголовки каждой страницы через **HEAD**, проверить статус ответа
+    + Содержимое каждой страницы через **GET**, проверить статус ответа
+    + Заголовок и содержимое несуществующей страницы, например **any_page.html**
+    + Попробовать отправить **POST-запрос** на главную страницу
 
----
+### ***Ход работы***
+
 1)
 
 2)
 
 3) Структура сайта:
-    + [index.html]((https://github.com/DenGoose/web_laba2020/blob/dev/index.html))
-    + [filmes.html]((https://github.com/DenGoose/web_laba2020/blob/dev/pages/filmes.html))
-    + [clients.html]((https://github.com/DenGoose/web_laba2020/blob/dev/pages/clients.html))
-    + [magazine.html]((https://github.com/DenGoose/web_laba2020/blob/dev/pages/magazine.html))
+    + **index.html**
+    + **filmes.html**
+    + **clients.html**
+    + **magazine.html**
 
 4) Тест серверных запросов через **telnet** и **curl**.
-    + HEAD </br>
+    + **HEAD** </br>
         ![HEAD](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/head.png)
-    + GET </br>
+    + **GET** </br>
         ![GET](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/get.png)
-    + 404 </br>
+    + **404** </br>
         ![error404](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/error404.png)
-    + POST </br>
+    + **POST** </br>
         ![POST](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/post.png)
 
 
