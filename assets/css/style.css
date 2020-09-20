@@ -42,6 +42,7 @@ body {
     color: #fff;
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
     box-shadow: inset 0 0 9rem rgba(0, 0, 0, .9);
+    background-image: url(/assets/images/main.jpg);
 }
 
 
@@ -52,12 +53,10 @@ body {
 .cover-container {
     display: flex;
     justify-content: space-between;
-    max-width: 42em;
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
 }
-
 
 /*
  * Header
@@ -106,6 +105,20 @@ body {
     padding: 0 1.5rem;
 }
 
+.back_text {
+    background-color: rgba(0, 0, 0, 0.76);
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.back_bl {
+    background-color: rgba(0, 0, 0, 0.619);
+    border-radius: 35px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
 .cover .btn-lg {
     padding: .75rem 1.25rem;
     font-weight: 700;
@@ -113,4 +126,30 @@ body {
 
 .mastfoot {
     color: rgba(255, 255, 255, .5);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.719);
+    border-radius: 25px;
+}
+
+.checkbox {
+    padding-top: 10px;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
