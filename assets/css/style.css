@@ -77,8 +77,9 @@ body {
 }
 
 .masthead {
-    margin-bottom: 2rem;
+    padding-bottom: 100px;
 }
+
 
 .masthead-brand {
     margin-bottom: 0;
@@ -135,9 +136,10 @@ body {
 
 .back_text {
     background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.95);
     border-radius: 20px;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 50px;
 }
 
 .back_bl {
@@ -173,6 +175,7 @@ body {
 
 .mastfoot {
     color: rgba(255, 255, 255, .5);
+    padding-top: 100px;
 }
 
 /* sign */
@@ -201,4 +204,23 @@ body {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+/* film */
+
+.f_img {
+    width: 180px;
+    height: 270px;
+}
+
+.films {
+    padding-right: 75px;
+    padding-bottom: 70px;
+    font-weight: bold;
+}
+
+.text_under {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    font-weight: bold;
 }
