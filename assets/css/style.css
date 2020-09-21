@@ -30,6 +30,8 @@ body {
     height: 100%;
     background-color: rgb(19, 19, 19);
     background-size: 100%;
+    background-image: url(/assets/images/main.jpg);
+
 }
 
 body {
@@ -43,12 +45,6 @@ body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
     /* box-shadow: inset 0 0 9rem rgba(0, 0, 0, .9); */
 }
-
-.back_img {
-    background-image: url(/assets/images/main.jpg);
-    background-repeat: repeat repeat;
-}
-
 
 * {
     box-sizing: border-box;
