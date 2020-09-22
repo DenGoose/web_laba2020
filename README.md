@@ -64,13 +64,13 @@
 
 4) Тест серверных запросов через **telnet**.
     + **HEAD** </br>
-        ![HEAD](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/head.png)
+        ![HEAD](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/head.png)
     + **GET** </br>
-        ![GET](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/get.png)
+        ![GET](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/get.png)
     + **404** </br>
-        ![error404](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/error404.png)
+        ![error404](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/error404.png)
     + **POST** </br>
-        ![POST](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/post.png)
+        ![POST](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/post.png)
 
 ## <a name="Second">Лабораторная работа 2 "Stateless HTTP-протокол и его реальное применение."</a>
 
