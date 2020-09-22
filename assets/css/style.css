@@ -43,7 +43,6 @@ body {
     justify-content: center;
     color: #fff;
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
-    /* box-shadow: inset 0 0 9rem rgba(0, 0, 0, .9); */
 }
 
 * {
