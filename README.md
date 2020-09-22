@@ -37,14 +37,16 @@
 
 ### ***Ход работы:***
 
-1) Сценарии использования сайта:
+1) Тема проекта: **"Фильмотека: список фильмов, список клиентов, список библиотекарей, журнал выдачи фильмов"**
+
+2) Сценарии использования сайта:
     + Гость может зайти на сайт и попадёт на **главную**
     + Гость может может посмотреть **список доступных фильмов**, перейдя в каталог Фильмы
     + Гость может посмотреть **историю просмотров фильмов**, перейдя во вкладку История
     + Гость может **зарегестрироваться** на сайте
     + Гость может **войти на сайт**, под своим аккаунтом
 
-2) Сетка сайта:
+3) Сетка сайта:
     + **Главная** </br>
         ![main](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/main.jpg)
     + **Фильмы** </br>
@@ -54,7 +56,7 @@
     + **Регистрация** </br>
         ![reg](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/reg.jpg)
 
-3) Структура сайта:
+4) Структура сайта:
     + **index.html**
     + **/pages/filmes.html**
     + **/pages/history.html**
@@ -62,7 +64,10 @@
     + **/pages/register.html**
     + **/assets/css/style.css**
 
-4) Тест серверных запросов через **telnet**.
+5) Скриншот сайта</br>
+![index](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/index.png)
+
+6) Тест серверных запросов через **telnet**.
     + **HEAD** </br>
         ![HEAD](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/head.png)
     + **GET** </br>
