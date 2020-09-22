@@ -1,0 +1,268 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
+    background-color: #fff;
+    border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+    height: 100%;
+    background-color: rgb(19, 19, 19);
+    background-size: 100%;
+    background-image: url(/assets/images/main.jpg);
+
+}
+
+body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
+    /* box-shadow: inset 0 0 9rem rgba(0, 0, 0, .9); */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.cover-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+ * Header
+ */
+
+.nav_nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+
+.register {
+    /* border: 1px solid #fff; */
+    color: #fff;
+}
+
+.masthead {
+    padding-bottom: 100px;
+}
+
+
+.masthead-brand {
+    margin-bottom: 0;
+}
+
+.btn,
+.nav-link {
+    margin: auto;
+    font-weight: bold;
+}
+
+.nav-masthead .nav-link {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead_f .nav-link {
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead_f .nav-link:hover,
+.nav-masthead_f .nav-link:focus {
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead_f .nav-link+.nav-link {
+    margin-left: 1rem;
+}
+
+.nav-masthead_f .active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+    .masthead-brand {
+        float: left;
+    }
+
+    .nav-masthead {
+        float: right;
+    }
+}
+
+/* main */
+
+.cover {
+    padding: 0 1.5rem;
+}
+
+.back_text {
+    background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.95);
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.back_bl {
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.95);
+    border-radius: 50px;
+    margin: auto;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.596);
+    /* box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.95); */
+}
+
+.vigneette {
+    -webkit-box-shadow:
+        inset 0 0 100px #000,
+        inset 0 0 100px #000,
+        inset 0 0 100px #000;
+
+    -moz-box-shadow:
+        inset 0 0 100px #000,
+        inset 0 0 100px #000,
+        inset 0 0 100px #000;
+
+    box-shadow:
+        inset 0 0 100px #000,
+        inset 0 0 100px #000,
+        inset 0 0 100px #000;
+}
+
+.cover .btn-lg {
+    padding: .75rem 1.25rem;
+    font-weight: 700;
+}
+
+.mastfoot {
+    color: rgba(255, 255, 255, .5);
+    padding-top: 100px;
+}
+
+/* sign */
+
+.form-signin {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+}
+
+.checkbox {
+    padding-top: 10px;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* film */
+
+.f_img {
+    width: 180px;
+    height: 270px;
+}
+
+.films {
+    padding-right: 75px;
+    padding-bottom: 70px;
+    font-weight: bold;
+}
+
+.text_under {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    font-weight: bold;
+}
+
+/* register */
+
+.container_reg {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+.registerbtn {
+    background-color: rgb(68, 67, 67);
+    color: #fff;
+    font-weight: bold;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+.signin {
+    text-align: center;
+}
