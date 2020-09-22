@@ -46,13 +46,13 @@
 
 2) Сетка сайта:
     + **Главная** </br>
-        ![main](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/main.jpg)
+        ![main](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/main.jpg)
     + **Фильмы** </br>
-        ![filmes](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/filmes.jpg)
+        ![filmes](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/filmes.jpg)
     + **Вход** </br>
-        ![login](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/login.jpg)
+        ![login](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/login.jpg)
     + **Регистрация** </br>
-        ![reg](https://github.com/DenGoose/web_laba2020/blob/dev/assets/images/github/reg.jpg)
+        ![reg](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/reg.jpg)
 
 3) Структура сайта:
     + **index.html**
