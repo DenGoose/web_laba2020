@@ -17,12 +17,12 @@
     <div class="cover-container d-inline-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
-                <h3 class="masthead-brand"><a href="/index.html"> Фильмотека </a></h3>
+                <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
                 <nav class="nav_nav">
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link " href="/pages/filmes.html">Фильмы</a>
+                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
-                        <a class="nav-link" href="/pages/history.html">История</a>
+                        <a class="nav-link" href="/pages/history.php">История</a>
                     </div>
                     <div class="nav nav-masthead">
                         <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
@@ -33,19 +33,15 @@
         </header>
 
         <main role="main" class="inner cover">
-            <div class="container_reg back_bl">
-                <h1>Регистрация</h1>
-                <form action="../src/php/register.php" method="post">
-                    <input type="text" placeholder="Введите Email" name="email" required>
-                    <input type="password" placeholder="Пароль" name="psw" required>
-                    <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-                    <button type="submit" class=" registerbtn">Регистрация</button>
+                <form action="../src/php/register.php" method="post" class="container_reg back_bl">
+                    <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
+                    <input type="email"  class="form-control" placeholder="Email адрес" name="email" required autofocus>
+                    <input type="text" class="form-control" placeholder="Логин" name="login" required>
+                    <input type="password" class="form-control" placeholder="Пароль" name="psw" required>
+                    <input type="password"  class="form-control" placeholder="Повторите пароль" name="psw-repeat" required>
+                    <button class="registerbtn" type="submit">Войти</button>
                 </form>
-            </div>
 
-            <div class="container signin">
-                <p>Уже зарегистрированы? <a href="auth.html">Войти</a>.</p>
-            </div>
         </main>
 
         <footer class="mastfoot mt-auto">

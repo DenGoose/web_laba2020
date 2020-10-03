@@ -179,7 +179,6 @@ body {
 .form-signin {
     width: 100%;
     max-width: 350px;
-    margin: 0 auto;
     padding: 15px;
 
     background-color: rgba(0, 0, 0, 0.6);
@@ -191,15 +190,11 @@ body {
 }
 
 .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    margin-bottom: 10px;
 }
 
 .form-signin input[type="password"] {
     margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
 }
 
 /* film */
@@ -226,25 +221,21 @@ body {
 .container_reg {
     width: 100%;
     max-width: 450px;
-    margin: 0 auto;
 }
 
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 1px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
+.container_reg input[type="email"] {
+
+    margin-bottom: 30px;
+}
+.container_reg input[type="text"] {
+
+    margin-bottom: 30px;
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
+.container_reg input[type="password"] {
+    margin-top: 10px;
 
+}
 
 .registerbtn {
     background-color: rgb(68, 67, 67);

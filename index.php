@@ -14,7 +14,7 @@
 </head>
 
 <body class="text-center vigneette">
-<div class="cover-container d-inline-flex h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
         <div class="inner">
             <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
@@ -24,27 +24,34 @@
                     <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     <a class="nav-link" href="/pages/history.php">История</a>
                 </div>
-                <div class="nav nav-masthead">
-                    <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                    <a href="register.html" class="nav-link register">Регистрация</a>
-                </div>
+                <?php
+                if (empty($_COOKIE['user'])) :
+                    ?>
+                    <div class="nav nav-masthead">
+                        <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
+                        <a href="/pages/register.html" class="nav-link register">Регистрация</a>
+                    </div>
+                <?php
+                else :
+                    ?>
+                    <div class="nav nav-masthead">
+                        <p>Привет, <?= $_COOKIE['user'] ?>. <a href="/src/php/exit.php">Выйти</a></p>
+                    </div>
+                <?php
+                endif;
+                ?>
             </nav>
         </div>
     </header>
 
-    <main role="main" class="inner cover">
-        <form action="../src/php/auth.php" method="post" class="form-signin back_bl">
-            <h1 class="h3 mb-3 font-weight-normal">Личный кабинет</h1>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" name="email" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="psw" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Не выходить
-                </label>
-            </div>
-            <button class="registerbtn" type="submit">Войти</button>
-        </form>
-
+    <main role="main" class="inner cover back_bl">
+        <h1 class="cover-heading">Добро пожаловать на фильмотеку</h1>
+        <p class="lead">
+            Здесь расположенны популярные фильмы, сериалы и всё что вам нужно, для полного погружения в киноиндустрию
+        </p>
+        <p class="lead">
+            <a href="/pages/filmes.html" class="btn btn-lg btn-secondary">Перейти к фильмам</a>
+        </p>
     </main>
 
     <footer class="mastfoot mt-auto">
@@ -57,7 +64,7 @@
 </div>
 
 <!-- Bootstrap core JavaScript
-================================================== -->
+  ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

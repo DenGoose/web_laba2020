@@ -6,14 +6,14 @@
 
     $mysql = new mysqli('localhost','root','','filmoteka');
 
-    $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$email' AND `password` = '$password'");
+    $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
     $user = $result->fetch_assoc();
-    if(count($user)==0){
+    if(!count($user)){
         echo "Пользователь не найден";
         exit();
     }
 
-    setcookie('user',$user['name'],time()+3600,"/");
+    setcookie('user',$user['login'],time()+3600,"/");
 
     $mysql->close();
 
