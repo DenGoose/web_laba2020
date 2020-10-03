@@ -35,10 +35,12 @@
         <main role="main" class="inner cover">
             <div class="container_reg back_bl">
                 <h1>Регистрация</h1>
-                <input type="text" placeholder="Введите Email" name="email" required>
-                <input type="password" placeholder="Пароль" name="psw" required>
-                <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-                <button type="submit" class=" registerbtn">Регистрация</button>
+                <form action="../src/php/register.php" method="post">
+                    <input type="text" placeholder="Введите Email" name="email" required>
+                    <input type="password" placeholder="Пароль" name="psw" required>
+                    <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
+                    <button type="submit" class=" registerbtn">Регистрация</button>
+                </form>
             </div>
 
             <div class="container signin">

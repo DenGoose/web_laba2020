@@ -33,12 +33,10 @@
         </header>
 
         <main role="main" class="inner cover">
-            <form class="form-signin back_bl">
+            <form action="../src/php/auth.php" method="post" class="form-signin back_bl">
                 <h1 class="h3 mb-3 font-weight-normal">Личный кабинет</h1>
-                <!-- <label for="inputEmail" class="sr-only">Email address</label> -->
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" required autofocus>
-                <!-- <label for="inputPassword" class="sr-only">Password</label> -->
-                <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" name="email" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="psw" required>
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Не выходить

@@ -232,7 +232,7 @@ body {
 input[type=text],
 input[type=password] {
     width: 100%;
-    padding: 15px;
+    padding: 1px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
