@@ -1,3 +1,8 @@
+<?php
+if (empty($_COOKIE['user'])) :
+header('Location: /pages/auth.html');
+else:
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,29 +24,22 @@
         <div class="inner">
             <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
             <nav class="nav_nav">
-
-
-
+                <div class="nav nav-masthead_f">
+                    <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
+                    <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
+                    <a class="nav-link" href="/pages/history.php">История</a>
+                    <a class="nav-link active" href="/pages/lk.php">Личный кабинет</a>
+                </div>
                 <?php
                 if (empty($_COOKIE['user'])) :
-                    ?>
-                    <div class="nav nav-masthead_f">
-                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
-                        <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
-                    </div>
-                    <div class="nav nav-masthead">
-                        <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                        <a href="/pages/register.html" class="nav-link register">Регистрация</a>
-                    </div>
+                ?>
+                <div class="nav nav-masthead">
+                    <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
+                    <a href="/pages/register.html" class="nav-link register">Регистрация</a>
+                </div>
                 <?php
                 else :
                     ?>
-                    <div class="nav nav-masthead_f">
-                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
-                        <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
-                        <a class="nav-link" href="/pages/history.php">История</a>
-                        <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
-                    </div>
                     <div class="nav nav-masthead">
                         <p>Привет, <?= $_COOKIE['user'] ?>. <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a></p>
                     </div>
@@ -51,28 +49,32 @@
             </nav>
         </div>
     </header>
+    <main role="main" class="inner cover back_text">
+<!--        --><?php
+//        $mysql = new mysqli('localhost','root','','filmoteka');
+//        $login = $_COOKIE['user'];
+//        $result= $mysql->query("SELECT `email` FROM `users` WHERE `login` = '$login'");
+//        $email=$result->fetch_assoc();
+//        ?>
+<!--        <ul>-->
+<!--            <li>Логин: --><?//= $_COOKIE['user'] ?><!--</li>-->
+<!--            <li>Email: --><?//=$email?><!--</li>-->
+<!--        </ul>-->
 
-    <main role="main" class="inner cover back_bl">
-        <h1 class="cover-heading">Добро пожаловать на фильмотеку</h1>
-        <p class="lead">
-            Здесь расположенны популярные фильмы, сериалы и всё что вам нужно, для полного погружения в киноиндустрию
-        </p>
-        <p class="lead">
-            <a href="/pages/filmes.html" class="btn btn-lg btn-secondary">Перейти к фильмам</a>
-        </p>
     </main>
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p>
-                Created by Den_Goose & gromkosha ©
-            </p>
-        </div>
-    </footer>
+
+<footer class="mastfoot mt-auto">
+    <div class="inner">
+        <p>
+            Created by Den_Goose & gromkosha ©
+        </p>
+    </div>
+</footer>
 </div>
 
 <!-- Bootstrap core JavaScript
-  ================================================== -->
+    ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -86,3 +88,6 @@
 </body>
 
 </html>
+<?php
+    endif;
+    ?>

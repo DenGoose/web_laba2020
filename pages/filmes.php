@@ -19,14 +19,16 @@
             <div class="inner">
                 <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
                 <nav class="nav_nav">
-                    <div class="nav nav-masthead_f">
-                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
-                        <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
-                        <a class="nav-link" href="/pages/history.php">История</a>
-                    </div>
+
+
+
                     <?php
                     if (empty($_COOKIE['user'])) :
                         ?>
+                        <div class="nav nav-masthead_f">
+                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
+                        <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
+                        </div>
                         <div class="nav nav-masthead">
                             <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
                             <a href="/pages/register.html" class="nav-link register">Регистрация</a>
@@ -34,8 +36,14 @@
                     <?php
                     else :
                         ?>
+                        <div class="nav nav-masthead_f">
+                            <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
+                            <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
+                            <a class="nav-link" href="/pages/history.php">История</a>
+                        <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
+                    </div>
                         <div class="nav nav-masthead">
-                            <p>Привет, <?= $_COOKIE['user'] ?>. <a href="/src/php/exit.php">Выйти</a></p>
+                            <p>Привет, <?= $_COOKIE['user'] ?>. <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a></p>
                         </div>
                     <?php
                     endif;

@@ -12,8 +12,23 @@
     $password = md5($password."fdkgjnfsdgdlmfg43r2t3r");
 
     $mysql = new mysqli('localhost','root','','filmoteka');
+
+    $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' OR `login` = '$login'");
+    $user = $result->fetch_assoc();
+    if(count($user)){
+        ?>
+        <html>
+        <body>
+            <h3>Вы ввели существующий email или логин</h3>
+            <p><a href="../../pages/register.html">Вернуться назад</a> </p>
+        </body>
+        </html>
+        <?php
+    exit();
+    }
+
     $mysql->query("INSERT INTO `users` (`email`,`password`,`login`) VALUES('$email','$password','$login')");
 
     $mysql->close();
 
-    header('Location: /');
+    header('Location: /pages/auth.html');

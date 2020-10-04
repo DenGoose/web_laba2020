@@ -13,8 +13,12 @@
         exit();
     }
 
-    setcookie('user',$user['login'],time()+3600,"/");
+    if(isset($_POST['check']) && $_POST['check'] == '1') {
+        setcookie('user', $user['login'], time() + 3600*24*7, "/");
+    }else{
+        echo '0';
+        setcookie('user', $user['login'],0,"/");
+    }
 
     $mysql->close();
-
     header('Location: /');
