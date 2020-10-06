@@ -256,3 +256,10 @@ body {
 .signin {
     text-align: center;
 }
+
+.msg {
+    color: red;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}

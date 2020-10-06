@@ -1,6 +1,6 @@
 <?php
 if (empty($_COOKIE['user'])) :
-header('Location: /pages/auth.html');
+header('Location: /pages/auth.php');
 else:
 ?>
 <!DOCTYPE html>
@@ -34,14 +34,17 @@ else:
                 if (empty($_COOKIE['user'])) :
                 ?>
                 <div class="nav nav-masthead">
-                    <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                    <a href="/pages/register.html" class="nav-link register">Регистрация</a>
+                    <a class="btn btn-secondary" href="/pages/auth.php">Войти</a>
+                    <a href="/pages/register.php" class="nav-link register">Регистрация</a>
                 </div>
                 <?php
                 else :
                     ?>
                     <div class="nav nav-masthead">
-                        <p>Привет, <?= $_COOKIE['user'] ?>. <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a></p>
+                        <p>Привет, <?= $_COOKIE['user'] ?>
+                            &nbsp;
+                            <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a>
+                        </p>
                     </div>
                 <?php
                 endif;
@@ -50,17 +53,19 @@ else:
         </div>
     </header>
     <main role="main" class="inner cover back_text">
-<!--        --><?php
-//        $mysql = new mysqli('localhost','root','','filmoteka');
-//        $login = $_COOKIE['user'];
-//        $result= $mysql->query("SELECT `email` FROM `users` WHERE `login` = '$login'");
-//        $email=$result->fetch_assoc();
-//        ?>
-<!--        <ul>-->
-<!--            <li>Логин: --><?//= $_COOKIE['user'] ?><!--</li>-->
-<!--            <li>Email: --><?//=$email?><!--</li>-->
-<!--        </ul>-->
-
+        <?php
+        $mysql = new mysqli('localhost','root','','filmoteka');
+        $login = $_COOKIE['user'];
+        $result= $mysql->query("SELECT `email` FROM `users` WHERE `login` = '$login'");
+        $email=$result->fetch_assoc();
+        ?>
+        <ul>
+            <li>Логин: <?= $_COOKIE['user'] ?></li>
+            <li>Email: <?=$email?></li>
+        </ul>
+        <?php
+        $mysql->close();
+        ?>
     </main>
 
 

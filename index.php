@@ -30,20 +30,23 @@
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
-                        <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                        <a href="/pages/register.html" class="nav-link register">Регистрация</a>
+                        <a class="btn btn-secondary" href="/pages/auth.php">Войти</a>
+                        <a href="/pages/register.php" class="nav-link register">Регистрация</a>
                     </div>
                 <?php
                 else :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
                     </div>
                     <div class="nav nav-masthead">
-                        <p>Привет, <?= $_COOKIE['user'] ?>. <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a></p>
+                        <p>Привет, <?= $_COOKIE['user'] ?>
+                            &nbsp;
+                            <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a>
+                        </p>
                     </div>
                 <?php
                 endif;

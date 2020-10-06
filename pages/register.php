@@ -1,3 +1,8 @@
+<?php
+session_start();
+//$_SESSION["message"]="";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,21 +29,27 @@
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
-                        <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                        <a href="register.html" class="nav-link register">Регистрация</a>
+                        <a class="btn btn-secondary" href="/pages/auth.php">Войти</a>
+                        <a href="register.php" class="nav-link register">Регистрация</a>
                     </div>
                 </nav>
             </div>
         </header>
 
         <main role="main" class="inner cover">
-                <form action="../src/php/register.php" method="post" class="container_reg back_bl">
+                <form action="../src/php/sign_up.php" method="post" class="container_reg back_bl">
                     <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
                     <input type="email"  class="form-control" placeholder="Email адрес" name="email" required autofocus>
                     <input type="text" class="form-control" placeholder="Логин" name="login" required>
                     <input type="password" class="form-control" placeholder="Пароль" name="psw" required>
                     <input type="password"  class="form-control" placeholder="Повторите пароль" name="psw-repeat" required>
                     <button class="registerbtn" type="submit">Войти</button>
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+                    }
+                    unset($_SESSION['message']);
+                    ?>
                 </form>
 
         </main>

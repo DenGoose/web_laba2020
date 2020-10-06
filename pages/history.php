@@ -29,8 +29,8 @@
                     if (empty($_COOKIE['user'])) :
                     ?>
                         <div class="nav nav-masthead">
-                            <a class="btn btn-secondary" href="/pages/auth.html">Войти</a>
-                            <a href="/pages/register.html" class="nav-link register">Регистрация</a>
+                            <a class="btn btn-secondary" href="/pages/auth.php">Войти</a>
+                            <a href="/pages/register.php" class="nav-link register">Регистрация</a>
                         </div>
                 </nav>
             </div>
@@ -43,7 +43,10 @@
                     else :
     ?>
         <div class="nav nav-masthead">
-            <p>Привет, <?= $_COOKIE['user'] ?>. <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a></p>
+            <p>Привет, <?= $_COOKIE['user'] ?>
+                &nbsp;
+                <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a>
+            </p>
         </div>
         </nav>
     </div>
