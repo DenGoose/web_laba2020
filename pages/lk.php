@@ -52,17 +52,19 @@ else:
             </nav>
         </div>
     </header>
-    <main role="main" class="inner cover back_text">
+    <main role="main" class="inner cover">
         <?php
         $mysql = new mysqli('localhost','root','','filmoteka');
         $login = $_COOKIE['user'];
         $result= $mysql->query("SELECT `email` FROM `users` WHERE `login` = '$login'");
-        $email=$result->fetch_assoc();
+        $arr=$result->fetch_assoc();
+        $email=$arr['email'];
+
         ?>
-        <ul>
-            <li>Логин: <?= $_COOKIE['user'] ?></li>
-            <li>Email: <?=$email?></li>
-        </ul>
+        <div class="back_text">
+            <p>Логин: <?= $_COOKIE['user'] ?></p>
+            <p>Email: <?=$email?></p>
+        </div>
         <?php
         $mysql->close();
         ?>
