@@ -139,21 +139,77 @@ CREATE TABLE `users` (
 
 ~~~
 
-3) **Ассоциотивый массив**
+3) **Ассоциотивый массив**</br>
+    Ассоциотивный массв можно увидеть на примере метода **fetch_assoc();** класса **mysqli_result**</br>
 
-4) **Регистрация и авторизация**
-    + Регистрация
+~~~php
+<?php
+    ...
+
+    $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
+    $user = $result->fetch_assoc();
+
+    print_r($user);
+    // Результат функции:
+    // Array ( [id] => 1 [email] => qwe@qwe.com [password] => 7eefcd70400c2ab9d4fb75ac312354ee [login] => qwe)
+
+?>
+~~~
+
+
+4) **Регистрация**
 
 ~~~~php
 <?php
+
+//  Более подробный код вы можете посмотреть в /src/php/sign_up.php
+//  Это краткая версия кода  
 
     $email = filter_var(trim($_POST['email']),FILTER_SANITIZE_STRING);
     $password = filter_var(trim($_POST['psw']),FILTER_SANITIZE_STRING);
     $password_r = filter_var(trim($_POST['psw-repeat']),FILTER_SANITIZE_STRING);
     $login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
 
+    $password = md5($password."fdkgjnfsdgdlmfg43r2t3r");
+
+    $mysql = new mysqli('localhost','root','','filmoteka');
+    $mysql->query("INSERT INTO `users` (`email`,`password`,`login`) VALUES('$email','$password','$login')");
+
 ?>
 ~~~~
+
+5) **Авторизация**
+
+~~~php
+<?php
+
+//  Более подробный код вы можете посмотреть в /src/php/sign_in.php
+//  Это краткая версия кода  
+
+    $email = filter_var(trim($_POST['email']),FILTER_SANITIZE_STRING);
+    $password = filter_var(trim($_POST['psw']),FILTER_SANITIZE_STRING);
+
+    $password = md5($password."fdkgjnfsdgdlmfg43r2t3r");
+
+    $mysql = new mysqli('localhost','root','','filmoteka');
+
+    $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
+    $check_if = mysqli_num_rows($result);
+    $user = $result->fetch_assoc();
+    if(!$check_if){
+        $_SESSION['message']= "Неверный логин или пароль";
+        header('Location: /pages/auth.php');
+        exit();
+    }
+
+    if(isset($_POST['check']) && $_POST['check'] == '1') {
+        setcookie('user', $user['login'], time() + 3600*24*7, "/");
+    }else{
+        echo '0';
+        setcookie('user', $user['login'], 0 ,"/");
+    }
+
+~~~
 
 ***Контрольные вопросы:***
 
