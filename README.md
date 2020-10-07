@@ -106,6 +106,55 @@
 
 ***Ход работы:***
 
+1) **Use case авторизации**
+    + **Внешний регистрации**</br>
+        ![reg](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/2/reg.png)
+    + **Ошибка использования существующих логинов и паролей**</br>
+        ![error_email](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/2/error_email.png)
+    + **Успешная регистрация**</br>
+        ![sucsess](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/2/sucsess.png)
+    + **Страница авторизированного пользователя**</br>
+        ![signin](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/2/signin.png)
+    + **Страница НЕ авторизированного пользователя**</br>
+        ![un_signin](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/2/un_signin.png)
+
+2) **Дамб Базы данный (MySQL)**
+
+~~~sql
+--  filmoteka это название БД
+--  users это название таблицы
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) unsigned auto_increment,
+  `email` varchar(50),
+  `password` varchar(32),
+  `login` varchar(50),
+  UNIQUE `id` (`id`),
+  UNIQUE `login` (`login`),
+  UNIQUE `email` (`email`)
+)/*! engine=MyISAM */;
+
+-- Полный код можно посмотреть в /sql/filmoteka.sql
+
+~~~
+
+3) **Ассоциотивый массив**
+
+4) **Регистрация и авторизация**
+    + Регистрация
+
+~~~~php
+<?php
+
+    $email = filter_var(trim($_POST['email']),FILTER_SANITIZE_STRING);
+    $password = filter_var(trim($_POST['psw']),FILTER_SANITIZE_STRING);
+    $password_r = filter_var(trim($_POST['psw-repeat']),FILTER_SANITIZE_STRING);
+    $login = filter_var(trim($_POST['login']),FILTER_SANITIZE_STRING);
+
+?>
+~~~~
+
 ***Контрольные вопросы:***
 
 1) Какой тип запроса к веб-серверу следует использовать **для отправки данных авторизации**?
