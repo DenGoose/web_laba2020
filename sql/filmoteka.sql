@@ -37,7 +37,7 @@ CREATE TABLE `users` (
 
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 LOCK TABLES `users` WRITE;
-INSERT INTO `users` VALUES (1,'qwe@qwe.com','7eefcd70400c2ab9d4fb75ac312354ee','qwe'),(3,'asd@asd.com','a97c06483dc14e2728ce808f03f1ae92','asd'),(4,'zxc@zxc.com','8c25f101a99fc35d0a07ca12edf1392e','zxc'),(6,'admin@admin.com','02b66d1f491d1dca99e04b22da98c92f','admin');
+INSERT INTO `users` VALUES (1,'qwe@qwe.com','7eefcd70400c2ab9d4fb75ac312354ee','qwe'),(3,'asd@asd.com','a97c06483dc14e2728ce808f03f1ae92','asd'),(4,'zxc@zxc.com','8c25f101a99fc35d0a07ca12edf1392e','zxc');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
