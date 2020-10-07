@@ -18,7 +18,6 @@
 
     $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' OR `login` = '$login'");
     $check_if = mysqli_num_rows($result);
-    $user = $result->fetch_assoc();
     if($check_if){
         $_SESSION['message']= "Данный email или логин уже существуют";
         header('Location: /pages/register.php');
