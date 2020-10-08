@@ -60,12 +60,13 @@ else:
                 </nav>
             </div>
         </header>
-        <main role="main" class="inner cover">
+        <main role="main" class="inner cover back_text">
+            <h3 class="cover-heading">Пользовательские данные:</h3>
             <?php
             require_once '../src/php/info.php';
 
             ?>
-            <div class="back_text">
+            <div>
                 <p>Логин: <?= $_COOKIE['user'] ?></p>
                 <p>Email: <?= $email ?></p>
             </div>

@@ -67,6 +67,9 @@ else:
 
     <main role="main" class="inner cover back_text">
         <h1 class="cover-heading">История просмотров</h1>
+        <div class="justify-content-center">
+            В разработке.
+        </div>
     </main>
     <?php
     endif;

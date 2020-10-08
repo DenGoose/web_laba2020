@@ -1,14 +1,15 @@
 <?php
 session_start();
-if (!isset($_SESSION['token'])) {
-    setcookie('user', '', time() - 3600, "/");
-} else {
-    if ($_SESSION['token'] != $_COOKIE['token']) {
-        unset($_SESSION['token']);
-        setcookie('token', '', time() - 3600, "/");
+if (!empty($_COOKIE['token']))
+    if (!isset($_SESSION['token'])) {
         setcookie('user', '', time() - 3600, "/");
+    } else {
+        if ($_SESSION['token'] != $_COOKIE['token']) {
+            unset($_SESSION['token']);
+            setcookie('token', '', time() - 3600, "/");
+            setcookie('user', '', time() - 3600, "/");
+        }
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="back_img vigneette">
