@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (isset($_SESSION['token'])) {
+    unset($_SESSION['token']);
+    setcookie('token', '', time() - 3600, "/");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +43,8 @@ session_start();
     <main role="main" class="inner cover">
         <form action="../src/php/sign_in.php" method="post" class="form-signin back_bl">
             <h1 class="h3 mb-3 font-weight-normal">Личный кабинет</h1>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" name="email" required autofocus>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" name="email" required
+                   autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" name="psw" required>
             <div class="checkbox mb-3">
                 <label>

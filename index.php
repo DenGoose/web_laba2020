@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (!empty($_COOKIE['token']))
+    if (!isset($_SESSION['token'])) {
+        setcookie('user', '', time() - 3600, "/");
+    } else {
+        if ($_SESSION['token'] != $_COOKIE['token']) {
+            unset($_SESSION['token']);
+            setcookie('token', '', time() - 3600, "/");
+            setcookie('user', '', time() - 3600, "/");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +32,6 @@
         <div class="inner">
             <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
             <nav class="nav_nav">
-
 
 
                 <?php
@@ -61,7 +73,7 @@
             Здесь расположенны популярные фильмы, сериалы и всё что вам нужно, для полного погружения в киноиндустрию
         </p>
         <p class="lead">
-            <a href="/pages/filmes.html" class="btn btn-lg btn-secondary">Перейти к фильмам</a>
+            <a href="/pages/filmes.php" class="btn btn-lg btn-secondary">Перейти к фильмам</a>
         </p>
     </main>
 

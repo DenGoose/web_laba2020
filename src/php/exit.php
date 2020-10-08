@@ -1,3 +1,4 @@
 <?php
-setcookie('user', $user['login'], time() - 3600, "/");
+setcookie('user', '', time() - 3600, "/");
+setcookie('token', '', time() - 3600, "/");
 header('Location: /');
