@@ -37,6 +37,17 @@ CREATE TABLE view (
     film_id int(10)
 )   ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+create table film
+(
+    id int unsigned auto_increment,
+    name varchar(50) not null,
+    constraint id
+        unique (id)
+)
+    engine=MyISAM charset=utf8;
+
+
+
 --
 -- Dumping data for table `users`
 --

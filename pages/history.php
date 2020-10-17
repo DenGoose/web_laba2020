@@ -26,7 +26,7 @@ else:
         <link href="/assets/css/style.css" rel="stylesheet"/>
     </head>
 
-    <body class="text-center vigneette">
+    <body class="text-center">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">

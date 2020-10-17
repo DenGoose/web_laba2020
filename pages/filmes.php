@@ -107,7 +107,7 @@ if (!empty($_COOKIE['token']))
             </div>
             <div class="col-xs-12 col-lg-4">
                 <a href="/pages/catalog/6.php">
-                    <img src="../assets/images/6.jpg" class="f_img">
+                    <img src="../assets/images/6.webp" class="f_img">
                     <p class="text_under">Матрица: Революция</p>
                 </a>
             </div>
