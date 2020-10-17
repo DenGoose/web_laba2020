@@ -66,9 +66,24 @@ else:
     </header>
 
     <main role="main" class="inner cover back_text">
-        <h1 class="cover-heading">История просмотров</h1>
-        <div class="justify-content-center">
-            В разработке.
+        <h1 class="cover-heading" style="margin-bottom: 50px">История просмотров</h1>
+        <div class="container-fluid container row text-center justify-content">
+            <?php
+            require_once '../src/php/views.php';
+            $arr = arr();
+            $N = count($arr);
+            for ($i = 0; $i < $N; $i++) {
+                ?>
+                <div class="col-xs-12 col-lg-4">
+                    <a href="/pages/catalog/<?= $arr[$i]['id'] ?>.php">
+                        <img src="../assets/images/<?= $arr[$i]['id'] ?>.webp" class="f_img">
+                        <p class="text_under"><?= $arr[$i]['name'] ?></p>
+                    </a>
+                </div>
+                <?php
+            }
+
+            ?>
         </div>
     </main>
     <?php

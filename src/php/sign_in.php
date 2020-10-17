@@ -8,7 +8,7 @@ $password = md5($password . "fdkgjnfsdgdlmfg43r2t3r");
 
 $mysql = new mysqli('localhost', 'root', '', 'filmoteka');
 
-$result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
+$result = $mysql->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
 $check_if = mysqli_num_rows($result);
 $user = $result->fetch_assoc();
 if (!$check_if) {

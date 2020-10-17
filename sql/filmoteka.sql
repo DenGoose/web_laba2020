@@ -28,7 +28,14 @@ CREATE TABLE `users` (
   UNIQUE `id` (`id`),
   UNIQUE `login` (`login`),
   UNIQUE `email` (`email`)
-)/*! engine=MyISAM */;
+) engine=MyISAM ;
+
+
+CREATE TABLE view (
+    date TIMESTAMP,
+    user_id int(10),
+    film_id int(10)
+)   ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`

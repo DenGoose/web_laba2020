@@ -74,19 +74,19 @@ if (!empty($_COOKIE['token']))
         </p>
         <div class="container-fluid container row text-center justify-content">
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/1.php">
                     <img src="../assets/images/1.webp" class="f_img">
                     <p class="text_under">Матрица</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/2.php">
                     <img src="../assets/images/2.webp" class="f_img">
                     <p class="text_under">Поезд в Пусан 2: Полуостров</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/3.php">
                     <img src="../assets/images/3.webp" class="f_img">
                     <p class="text_under">Академия Амбрелла</p>
                 </a>
@@ -94,19 +94,19 @@ if (!empty($_COOKIE['token']))
         </div>
         <div class="container-fluid container row text-center justify-content">
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/4.php">
                     <img src="../assets/images/4.webp" class="f_img">
                     <p class="text_under">Аватар</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/5.php">
                     <img src="../assets/images/5.webp" class="f_img">
                     <p class="text_under">Игра в имитацию</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/6.php">
                     <img src="../assets/images/6.jpg" class="f_img">
                     <p class="text_under">Матрица: Революция</p>
                 </a>
@@ -114,19 +114,19 @@ if (!empty($_COOKIE['token']))
         </div>
         <div class="container-fluid container row text-center justify-content">
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/7.php">
                     <img src="../assets/images/7.webp" class="f_img">
                     <p class="text_under">Грань будущего</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/8.php">
                     <img src="../assets/images/8.webp" class="f_img">
                     <p class="text_under">Начало</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/9.php">
                     <img src="../assets/images/9.webp" class="f_img">
                     <p class="text_under">Очень странные дела</p>
                 </a>
@@ -134,20 +134,20 @@ if (!empty($_COOKIE['token']))
         </div>
         <div class="container-fluid container row text-center justify-content">
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/10.php">
                     <img src="../assets/images/10.webp" class="f_img">
                     <p class="text_under">Звёздные войны. Эпизод III: Месть ситхов
                     </p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/11.php">
                     <img src="../assets/images/11.png" class="f_img">
                     <p class="text_under">Звёздный путь: Пикар</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="#">
+                <a href="/pages/catalog/12.php">
                     <img src="../assets/images/12.webp" class="f_img">
                     <p class="text_under">Телохранитель киллера</p>
                 </a>

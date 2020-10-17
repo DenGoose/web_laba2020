@@ -16,7 +16,7 @@ $password = md5($password . "fdkgjnfsdgdlmfg43r2t3r");
 
 $mysql = new mysqli('localhost', 'root', '', 'filmoteka');
 
-$result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email' OR `login` = '$login'");
+$result = $mysql->query("SELECT * FROM users WHERE email = '$email' OR login = '$login'");
 $check_if = mysqli_num_rows($result);
 if ($check_if) {
     $_SESSION['message'] = "Данный email или логин уже существуют";
@@ -24,7 +24,7 @@ if ($check_if) {
     exit();
 }
 
-$mysql->query("INSERT INTO `users` (`email`,`password`,`login`) VALUES('$email','$password','$login')");
+$mysql->query("INSERT INTO users (email,password,login) VALUES('$email','$password','$login')");
 $_SESSION['message'] = 'Регистрация прошла успешно!';
 
 $mysql->close();
