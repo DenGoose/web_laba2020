@@ -25,36 +25,26 @@ else:
 
         <link href="/assets/css/style.css" rel="stylesheet"/>
     </head>
-
-    <body class="text-center">
+    <?php
+    require_once '../src/php/views.php';
+    if (arr() == -1){
+        echo "<body class='text-center vigneette'>";
+    }else{
+        echo "<body class='text-center'>";
+    }
+    ?>
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
                 <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
                 <nav class="nav_nav">
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link " href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link active" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
                     </div>
-                    <?php
-                    if (empty($_COOKIE['user'])) :
-                    ?>
-                    <div class="nav nav-masthead">
-                        <a class="btn btn-secondary" href="/pages/auth.php">Войти</a>
-                        <a href="/pages/register.php" class="nav-link register">Регистрация</a>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <main role="main" class="inner cover back_text">
-            <h1 class="cover-heading">Вам нужно войти на сайт</h1>
 
-        </main>
-        <?php
-        else :
-        ?>
         <div class="nav nav-masthead">
             <p>Привет, <?= $_COOKIE['user'] ?>
                 &nbsp;
@@ -67,10 +57,12 @@ else:
 
     <main role="main" class="inner cover back_text">
         <h1 class="cover-heading" style="margin-bottom: 50px">История просмотров</h1>
-        <div class="container-fluid container row text-center justify-content">
-            <?php
-            require_once '../src/php/views.php';
-            $arr = arr();
+        <?php
+        $arr = arr();
+        if ($arr == -1) {
+            echo "<p style='text-align: center'>Ваша история просмотров пуста</p>";
+        } else {
+            echo "<div class='container-fluid container row text-center justify-content'>";
             $N = count($arr);
             for ($i = 0; $i < $N; $i++) {
                 ?>
@@ -82,13 +74,10 @@ else:
                 </div>
                 <?php
             }
-
-            ?>
-        </div>
+            echo "</div>";
+        }
+        ?>
     </main>
-    <?php
-    endif;
-    ?>
 
 
     <footer class="mastfoot mt-auto">

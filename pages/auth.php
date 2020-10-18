@@ -29,7 +29,7 @@ if (isset($_SESSION['token'])) {
             <h3 class="masthead-brand"><a href="/index.php"> Фильмотека </a></h3>
             <nav class="nav_nav">
                 <div class="nav nav-masthead_f">
-                    <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
+                    <a class="nav-link " href="/pages/filmes.php">Фильмы и сериалы</a>
                     <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                 </div>
                 <div class="nav nav-masthead">

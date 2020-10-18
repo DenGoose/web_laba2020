@@ -38,7 +38,7 @@ if (!empty($_COOKIE['token']))
                 if (empty($_COOKIE['user'])) :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link " href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
@@ -49,7 +49,7 @@ if (!empty($_COOKIE['token']))
                 else :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link " href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
@@ -73,7 +73,7 @@ if (!empty($_COOKIE['token']))
             Здесь расположенны популярные фильмы, сериалы и всё что вам нужно, для полного погружения в киноиндустрию
         </p>
         <p class="lead">
-            <a href="/pages/filmes.php" class="btn btn-lg btn-secondary">Перейти к фильмам</a>
+            <a href="/pages/filmes.php" class="btn btn-lg btn-secondary">Перейти к фильмам и сериалам</a>
         </p>
     </main>
 

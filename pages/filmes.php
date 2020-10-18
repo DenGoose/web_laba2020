@@ -38,7 +38,7 @@ if (!empty($_COOKIE['token']))
                 if (empty($_COOKIE['user'])) :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link active " href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
@@ -49,7 +49,7 @@ if (!empty($_COOKIE['token']))
                 else :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link active " href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link active " href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
@@ -141,9 +141,9 @@ if (!empty($_COOKIE['token']))
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">
-                <a href="/pages/catalog/11.php">
-                    <img src="../assets/images/11.png" class="f_img">
-                    <p class="text_under">Звёздный путь: Пикар</p>
+                <a href="/pages/catalog/13.php">
+                    <img src="../assets/images/13.webp" class="f_img">
+                    <p class="text_under">Звёздный путь: Дискавери</p>
                 </a>
             </div>
             <div class="col-xs-12 col-lg-4">

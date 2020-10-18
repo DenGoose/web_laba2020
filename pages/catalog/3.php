@@ -50,7 +50,7 @@ $mysql->close();
                 if (empty($_COOKIE['user'])) :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link" href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link" href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
@@ -61,7 +61,7 @@ $mysql->close();
                 else :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link" href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link" href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
@@ -81,8 +81,51 @@ $mysql->close();
     <main role="main" class="f_main back_text">
 
         <h1 class="inner cover films">
-            <?= $name ?>
+            <?= $name ?> (сериал)
         </h1>
+        <div class="container-fluid container row text-center justify-content">
+            <div class="col-xs-12 col-lg-6">
+                <img src="../../assets/images/3.webp">
+            </div>
+            <div class="col-xs-12 col-lg-6">
+                <p>
+                    Расформированная группа супергероев воссоединяется после смерти своего приемного отца, который готовил их к спасению мира от неизвестной угрозы. Вместе они должны продолжить его дело.
+                </p>
+                <p style="font-weight: bold">О фильме</p>
+                <table class="table table-hover">
+                    <tbody>
+                    <tr class="text-white">
+                        <td>Год производства</td>
+                        <td>2019-...</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Страна</td>
+                        <td>США, Канада</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Жанр</td>
+                        <td>фантастика, фэнтези, боевик, драма, комедия, приключения</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Слоган</td>
+                        <td>«Super Strong»</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Режиссер</td>
+                        <td>Эллен Кёрас, Стивен Серджик, ...</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Премьера в Росcии</td>
+                        <td>-</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Премьера в мире</td>
+                        <td>15 февраля 2019, ...</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 

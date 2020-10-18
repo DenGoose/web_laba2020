@@ -50,7 +50,7 @@ $mysql->close();
                 if (empty($_COOKIE['user'])) :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link" href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link" href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                     </div>
                     <div class="nav nav-masthead">
@@ -61,7 +61,7 @@ $mysql->close();
                 else :
                     ?>
                     <div class="nav nav-masthead_f">
-                        <a class="nav-link" href="/pages/filmes.php">Фильмы</a>
+                        <a class="nav-link" href="/pages/filmes.php">Фильмы и сериалы</a>
                         <!-- <a class="nav-link" href="/pages/clients.html">Клиенты</a> -->
                         <a class="nav-link" href="/pages/history.php">История</a>
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
@@ -83,6 +83,49 @@ $mysql->close();
         <h1 class="inner cover films">
             <?= $name ?>
         </h1>
+        <div class="container-fluid container row text-center justify-content">
+            <div class="col-xs-12 col-lg-6">
+                <img src="../../assets/images/12.webp">
+            </div>
+            <div class="col-xs-12 col-lg-6">
+                <p>
+                    Динамичный комедийный боевик о киллере
+                </p>
+                <p style="font-weight: bold">О фильме</p>
+                <table class="table table-hover">
+                    <tbody>
+                    <tr class="text-white">
+                        <td>Год производства</td>
+                        <td>2017</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Страна</td>
+                        <td>США, Гонконг, Болгария, Нидерланды, Канада, Великобритания, Франция</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Жанр</td>
+                        <td>боевик, триллер, комедия, криминал</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Слоган</td>
+                        <td>«Когда новый клиент – старый враг»</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Режиссер</td>
+                        <td>Патрик Хьюз</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Премьера в Росcии</td>
+                        <td>17 августа 2017</td>
+                    </tr>
+                    <tr class="text-white">
+                        <td>Премьера в мире</td>
+                        <td>10 августа 2017</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 
