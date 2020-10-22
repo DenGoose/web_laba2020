@@ -509,7 +509,8 @@ function rating($film_id)
     + Авторизован, с личным рейтингом и не пустое</br>
         ![rated](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/rated.png)
 
-3) Скринкаст </br><iframe width="560" height="315" src="https://www.youtube.com/embed/hMPqa8IOmes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+3) Скринкаст </br>
+    [![video](https://img.youtube.com/vi/hMPqa8IOmes/0.jpg)](https://youtu.be/hMPqa8IOmes)
 
 ## <a name="Fourth">Лабораторная работа 4 "Реализуем интерфейс управления данными. CR (без UD) на одной таблице"</a>
 
