@@ -149,7 +149,7 @@ CREATE TABLE `users` (
   UNIQUE `id` (`id`),
   UNIQUE `login` (`login`),
   UNIQUE `email` (`email`)
-)/*! engine=MyISAM */;
+) engine=MyISAM ;
 
 --
 -- Dumping data for table `users`
@@ -350,6 +350,166 @@ if ($_SESSION['token'] != $_COOKIE['token']) :
 5) **Профессиональный сайт.** На таких сайтах лучше **проработана система защиты информации + сильная защита от взломой и кражи ключей авторизации**. Не знаю что ещё добавить, слишком мало опыта и информации, чтобы понять как именно работает тот или иной сайт.
 
 ## <a name="Third">Лабораторная работа 3 "Решение прикладных задач на PHP"</a>
+
+***Задание:*** Запрограммировать арифметический калькулятор в виде веб-приложения. Продемонстрировать на странице сайта, сделанного  на 1-2 ЛР.
+
+***Общие требования:***
+
++ Выделять функции, не писать тонну кода в поток.
++ Разделять логику и представление.
++ Не использовать php-фреймворков.
+
+Задачи намеренно сформулированы недостаточно конкретно.
+Требуется додумать задачу, сформулировать ее, реализовать и сдать.
+
+***Нужно провести следующую работу:***
+
+1) Детальная формулировка задачи с описанием **“как будем делать”**
+2) **3 Тестовых примера** со скриншотами, макетами, описанием результатов. Верстаем, рисуем
+3) **PHP-Код**, вставленный прямо в протокол
+4) Работающее решение в виде папки с файлами.
+5) **Скринкаст** работы вашего решения
+
+***Ход работы:***
+
+1) Задание не совсем понятное, но я решил сделать систему рейтинга фольмов на сайте. Пользователи могуг оценить фильм по 5-ти бальной системе. Так же отображается общий рейтинг фильмов, оценённый всеми пользователями на сайте. Если пользователь не авторизирован на сайте, то ему доступно только просмотр общего рейтинга сайта. План работы:
+<Ul>
+    <li> Создание 3-х функций для работы рейтинга
+
+~~~php
+<?php
+/**
+ * @param $rate - рейтинг пользователя
+ * @param $user - Логин пользователя
+ * @param $film_id - номер фильма
+ */
+function add_rating($rate, $user, $film_id)
+{
+    $mysql = new mysqli('localhost', 'root', '', 'filmoteka');
+    $result = $mysql->query("SELECT id FROM users WHERE login = '$user'");
+    $result = $result->fetch_assoc();
+    $id = $result['id'];
+    $mysql->query("INSERT INTO hit_rating.rating (id_film, id_user, rate) VALUE ('$film_id','$id','$rate')");
+    $result_f = $mysql->query("SELECT rating, rating_count FROM fimes.film WHERE id = '$film_id'");
+    $result_f = $result_f->fetch_assoc();
+    $rating = $result_f['rating'] + $rate;
+    $count = $result_f['rating_count'] + 1;
+    $mysql->query("UPDATE fimes.film SET rating = '$rating' , rating_count = '$count' where id = '$film_id'");
+    $mysql->close();
+
+}
+
+/**
+ * @param $user - логин пользователя
+ * @param $film_id - id фильма
+ * @return int Вывод рейтинга пользователя
+ */
+function check_rating($user, $film_id)
+{
+    $mysql = new mysqli('localhost', 'root', '', 'filmoteka');
+    $result_id = $mysql->query("SELECT id FROM users WHERE login = '$user'");
+    $result_id = $result_id->fetch_assoc();
+    $id = $result_id['id'];
+    $result = $mysql->query("SELECT rate FROM hit_rating.rating WHERE id_film = '$film_id' and id_user ='$id'");
+    $result = $result->fetch_assoc();
+    $rating = $result['rate'];
+    $mysql->close();
+    return $id;
+}
+
+/**
+ * @param $film_id - id фильма
+ * @return float|int Общий рейтинг фильма всех польователей
+ */
+function rating($film_id)
+{
+    $mysql = new mysqli('localhost', 'root', '', 'filmoteka');
+    $result = $mysql->query("SELECT rating,rating_count FROM fimes.film WHERE id='$film_id'");
+    $result = $result->fetch_assoc();
+    if ($result['rating_count'] == 0) {
+        return 0;
+    }
+    return $result['rating'] / $result['rating_count'];
+}
+?>
+~~~
+</li>
+    <li> Интеграция php кода на страницу фильма
+
+~~~php
+<?php
+                require_once "../../src/php/rating.php";
+                if (!empty($_COOKIE['user'])) {
+                    if (!check_rating($_COOKIE['user'], $id)) {
+                        ?>
+                        <form method="post" class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5">
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="Оценка «1»"></label>
+                            <button type="submit" class="btn">Отправить</button>
+                        </form>
+                        <?php
+                        require_once "../../src/php/rating.php";
+                        if (isset($_POST['rating'])) {
+                            add_rating($_POST['rating'], $_COOKIE['user'], $id);
+                            header("Refresh:0");
+                        }
+                    } else {
+                        $num = check_rating($_COOKIE['user'], $id);
+                        ?>
+                        <h3 class="rate_text">Ваш рейтинг</h3>
+                        <form method="post" class="rating-area" style="margin-bottom: 20px">
+                            <input type="radio" id="star-5" name="rating"
+                                   value="5" <?php if ($num == 5) echo "checked" ?>>
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating"
+                                   value="4" <?php if ($num == 4) echo "checked" ?>>
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating"
+                                   value="3" <?php if ($num == 3) echo "checked" ?>>
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating"
+                                   value="2" <?php if ($num == 2) echo "checked" ?>>
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating"
+                                   value="1" <?php if ($num == 1) echo "checked" ?>>
+                            <label for="star-1" title="Оценка «1»"></label>
+                        </form>
+                        <?php
+                    }
+                }
+                ?>
+                <div>
+                    <h6 class="rate_text" ">Средний рейтинг по сайту</h6>
+                    <h4 class="rate_film"><?php if (rating($id)!=0) echo round(rating($id), 2); else echo "Пока никто не голосовал";?></h4>
+                </div>
+~~~
+
+</li>
+</ul>
+
+2) Скриншоты рейтинга
+    + Основной вид</br>
+        ![main_film](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/main_film.png)
+    + Не авторизован, пустое</br>
+        ![not_added](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/not_added.png)
+    + Не авторизован, не пустое</br>
+        ![unsign](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/unsign.png)
+    + Авторизован, без рейтинга и пустое</br>
+        ![sign_null](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/sign_null.png)
+    + Авторизован, без рейтинга и не пустое</br>
+        ![unrated](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/unrated.png)
+    + Авторизован, с личным рейтингом и не пустое</br>
+        ![rated](https://github.com/DenGoose/web_laba2020/blob/master/assets/images/github/3/rated.png)
+
+3) Скринкаст </br><iframe width="560" height="315" src="https://www.youtube.com/embed/hMPqa8IOmes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## <a name="Fourth">Лабораторная работа 4 "Реализуем интерфейс управления данными. CR (без UD) на одной таблице"</a>
 

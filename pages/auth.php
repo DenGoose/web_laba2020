@@ -18,7 +18,7 @@ if (isset($_SESSION['token'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-
+    <link rel="shortcut icon" href="/assets/images/icon.ico" type="image/ico">
     <link href="/assets/css/style.css" rel="stylesheet"/>
 </head>
 

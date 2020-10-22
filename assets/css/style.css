@@ -31,6 +31,8 @@ body {
     background-color: rgb(19, 19, 19);
     background-size: 100%;
     background-image: url(/assets/images/main.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
@@ -240,7 +242,7 @@ body {
     color: #fff;
     font-weight: bold;
     padding: 16px 20px;
-    margin: 8px 0;
+    margin-top: 20px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -259,5 +261,69 @@ body {
     color: red;
     padding: 5px;
     text-align: center;
+    font-weight: bold;
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin-left: 100px;
+}
+
+.rating-area > button {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.rating-area:not(:checked) > input {
+    display: none;
+}
+
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating-area > input:checked ~ label {
+    color: rgb(232, 154, 121);
+    text-shadow: 1px 1px #97614c;
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: rgb(232, 154, 121);
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: rgb(226, 116, 73);
+    text-shadow: 4px 4px black;
+}
+
+.rate-area > label:active {
+    position: relative;
+}
+
+.rate_text {
+    color: rgb(240, 198, 137);
+}
+
+.rate_film {
+    color: rgb(232, 154, 121);
     font-weight: bold;
 }

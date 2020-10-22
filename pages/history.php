@@ -22,14 +22,14 @@ else:
 
         <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-
+        <link rel="shortcut icon" href="/assets/images/icon.ico" type="image/ico">
         <link href="/assets/css/style.css" rel="stylesheet"/>
     </head>
     <?php
     require_once '../src/php/views.php';
-    if (arr() == -1){
+    if (arr() == -1) {
         echo "<body class='text-center vigneette'>";
-    }else{
+    } else {
         echo "<body class='text-center'>";
     }
     ?>
@@ -45,48 +45,48 @@ else:
                         <a class="nav-link" href="/pages/lk.php">Личный кабинет</a>
                     </div>
 
-        <div class="nav nav-masthead">
-            <p>Привет, <?= $_COOKIE['user'] ?>
-                &nbsp;
-                <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a>
-            </p>
-        </div>
-        </nav>
-    </div>
-    </header>
+                    <div class="nav nav-masthead">
+                        <p>Привет, <?= $_COOKIE['user'] ?>
+                            &nbsp;
+                            <a class="btn btn-secondary" href="/src/php/exit.php">Выйти</a>
+                        </p>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-    <main role="main" class="inner cover back_text">
-        <h1 class="cover-heading" style="margin-bottom: 50px">История просмотров</h1>
-        <?php
-        $arr = arr();
-        if ($arr == -1) {
-            echo "<p style='text-align: center'>Ваша история просмотров пуста</p>";
-        } else {
-            echo "<div class='container-fluid container row text-center justify-content'>";
-            $N = count($arr);
-            for ($i = 0; $i < $N; $i++) {
-                ?>
-                <div class="col-xs-12 col-lg-4">
-                    <a href="/pages/catalog/<?= $arr[$i]['id'] ?>.php">
-                        <img src="../assets/images/<?= $arr[$i]['id'] ?>.webp" class="f_img">
-                        <p class="text_under"><?= $arr[$i]['name'] ?></p>
-                    </a>
-                </div>
-                <?php
+        <main role="main" class="inner cover back_text">
+            <h1 class="cover-heading" style="margin-bottom: 50px">История просмотров</h1>
+            <?php
+            $arr = arr();
+            if ($arr == -1) {
+                echo "<p style='text-align: center'>Ваша история просмотров пуста</p>";
+            } else {
+                echo "<div class='container-fluid container row text-center justify-content'>";
+                $N = count($arr);
+                for ($i = 0; $i < $N; $i++) {
+                    ?>
+                    <div class="col-xs-12 col-lg-4">
+                        <a href="/pages/catalog/<?= $arr[$i]['id'] ?>.php">
+                            <img src="../assets/images/<?= $arr[$i]['id'] ?>.webp" class="f_img">
+                            <p class="text_under"><?= $arr[$i]['name'] ?></p>
+                        </a>
+                    </div>
+                    <?php
+                }
+                echo "</div>";
             }
-            echo "</div>";
-        }
-        ?>
-    </main>
+            ?>
+        </main>
 
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p>
-                Created by Den_Goose & gromkosha ©
-            </p>
-        </div>
-    </footer>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>
+                    Created by Den_Goose & gromkosha ©
+                </p>
+            </div>
+        </footer>
     </div>
 
     <!-- Bootstrap core JavaScript

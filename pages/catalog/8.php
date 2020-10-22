@@ -34,7 +34,7 @@ $mysql->close();
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-
+    <link rel="shortcut icon" href="/assets/images/icon.ico" type="image/ico">
     <link href="/assets/css/style.css" rel="stylesheet"/>
 </head>
 
@@ -88,8 +88,63 @@ $mysql->close();
                 <img src="../../assets/images/8.webp">
             </div>
             <div class="col-xs-12 col-lg-6">
+                <?php
+                require_once "../../src/php/rating.php";
+                if (!empty($_COOKIE['user'])) {
+                    if (!check_rating($_COOKIE['user'], $id)) {
+                        ?>
+                        <form method="post" class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5">
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="Оценка «1»"></label>
+                            <button type="submit" class="btn">Отправить</button>
+                        </form>
+                        <?php
+                        require_once "../../src/php/rating.php";
+                        if (isset($_POST['rating'])) {
+                            add_rating($_POST['rating'], $_COOKIE['user'], $id);
+                            header("Refresh:0");
+                        }
+                    } else {
+                        $num = check_rating($_COOKIE['user'], $id);
+                        ?>
+                        <h3 class="rate_text">Ваш рейтинг</h3>
+                        <form method="post" class="rating-area" style="margin-bottom: 20px">
+                            <input type="radio" id="star-5" name="rating"
+                                   value="5" <?php if ($num == 5) echo "checked" ?>>
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating"
+                                   value="4" <?php if ($num == 4) echo "checked" ?>>
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating"
+                                   value="3" <?php if ($num == 3) echo "checked" ?>>
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating"
+                                   value="2" <?php if ($num == 2) echo "checked" ?>>
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating"
+                                   value="1" <?php if ($num == 1) echo "checked" ?>>
+                            <label for="star-1" title="Оценка «1»"></label>
+                        </form>
+                        <?php
+                    }
+                }
+                ?>
+                <div>
+                    <h6 class="rate_text" ">Средний рейтинг по сайту</h6>
+                    <h4 class="rate_film"><?php if (rating($id)!=0) echo round(rating($id), 2); else echo "Пока никто не голосовал";?></h4>
+                </div>
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Краткое описание</h3>
                 <p>
-                    Шпионаж фантастического уровня. С помощью сверхтехнологии герой Ди Каприо и его команда проникают в чужие сны
+                    Шпионаж фантастического уровня. С помощью сверхтехнологии герой Ди Каприо и его команда проникают в
+                    чужие сны
                 </p>
                 <p style="font-weight: bold">О фильме</p>
                 <table class="table table-hover">
@@ -111,8 +166,8 @@ $mysql->close();
                         <td>«Твой разум - место преступления»</td>
                     </tr>
                     <tr class="text-white">
+                        <td>Режиссер</td>
                         <td>Кристофер Нолан</td>
-                        <td>Ён Сан-хо</td>
                     </tr>
                     <tr class="text-white">
                         <td>Премьера в Росcии</td>
@@ -124,6 +179,11 @@ $mysql->close();
                     </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="col-xs-12 col-lg-12" style="margin-top: 20px">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/1WF9y_zZ0N8" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
             </div>
         </div>
 
